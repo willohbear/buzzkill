@@ -30,7 +30,7 @@ async def r_one(ctx):
 
 @client.command(aliases=['rules2'])
 async def r_two(ctx):
-    embed=discord.Embed(title="GENERAL RULES.", description="Those under 18 years old are not permitted to join. All characters will be 18+ only. Anyone can die and we don’t shy away from the nitty gritty. Death will play a part in this, especially to escalate the stakes and certain situations, but it isn’t going to be the focal point. We’re going to up the ante once we get a solid core group going and regular activity but there is so much to be explored. The admins have high hopes for this and some exciting directions we want to explore, therefore we will be heavily involved in plot drops, wild cards, in game advancement via information drops, challenge wins, and much, much more! Just because you apply, it doesn’t mean you’re automatically going to be accepted. ", color=0x469b57)
+    embed=discord.Embed(title="GENERAL RULES", description="Those under 18 years old are not permitted to join. All characters will be 18+ only. Anyone can die and we don’t shy away from the nitty gritty. Death will play a part in this, especially to escalate the stakes and certain situations, but it isn’t going to be the focal point. We’re going to up the ante once we get a solid core group going and regular activity but there is so much to be explored. The admins have high hopes for this and some exciting directions we want to explore, therefore we will be heavily involved in plot drops, wild cards, in game advancement via information drops, challenge wins, and much, much more! Just because you apply, it doesn’t mean you’re automatically going to be accepted. ", color=0x469b57)
     embed.set_thumbnail(url="https://avatarfiles.alphacoders.com/155/155656.png")
     await ctx.send(embed=embed)
 
@@ -173,4 +173,6 @@ async def createcamp(ctx, thread):
     category = discord.utils.get(ctx.guild.categories, name=name)
     await ctx.guild.create_text_channel(f'{thread}', category=category)
 
-client.run('NzY0MjUzODIxMzIzOTY4NTMz.X4Dk1g.5Sa2o30cvvXzjVQnruLI2_B5CK0')
+if __name__ == '__main__':
+    import config
+    client.run(config.token)
